@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Circular';
+  src: url('../fonts/CircularStd-Book-PR-2.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CircularStd-Book-PR-2.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CircularStd-Book-PR-2.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/CircularStd-Book-PR-2.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CircularStd-Book-PR-2.svg#dd452d63ae05ddb466f19713a7d09fd5') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../fonts/CircularStd-Medium-PR-1.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CircularStd-Medium-PR-1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CircularStd-Medium-PR-1.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/CircularStd-Medium-PR-1.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CircularStd-Medium-PR-1.svg#dd452d63ae05ddb466f19713a7d09fd5') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../fonts/CircularStd-BookItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CircularStd-BookItalic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/CircularStd-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CircularStd-BookItalic.svg#dd452d63ae05ddb466f19713a7d09fd5') format('svg'); /* Legacy iOS */
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../fonts/CircularStd-MediumItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CircularStd-MediumItalic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/CircularStd-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CircularStd-MediumItalic.svg#dd452d63ae05ddb466f19713a7d09fd5') format('svg'); /* Legacy iOS */
+  font-style:   italic;
+  font-weight:  700;
+}
+
+.webstore-overlay, 
+.webstore-overlay h1,
+.webstore-overlay h2,
+.webstore-overlay h3,
+.webstore-overlay h4,
+.webstore-overlay h5,
+.webstore-overlay h6,
+.webstore-overlay input, .webstore-overlay button, .webstore-overlay select, .webstore-overlay textarea {
+  font-family: "Circular", "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
