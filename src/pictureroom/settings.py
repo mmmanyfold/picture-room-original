@@ -122,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, os.pardir, "public", "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 FB_API_VERSION = '2.5'
 FB_PAGE_ID = "1621915491411610"
