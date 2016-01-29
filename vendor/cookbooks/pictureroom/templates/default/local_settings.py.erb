@@ -1,0 +1,41 @@
+<%- @settings.each do |key, value| %>
+<%- if value %><%= key %> = <%- if value == "True" || value == "False" %><%= value %><%- else %>"<%= value %>"<%- end %><%- end %>
+<%- end %>
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '<%= @db['name'] %>',
+        'USER': '<%= @db['user'] %>',
+        'PORT': '5432',
+    }
+}
+
+BROKER_URL = 'amqp://<%= @rabbitmq['user'] %>:<%= @rabbitmq['password'] %>@localhost:5672/<%= @hostname %>'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': '<%= @log_level %>',
+            'class': 'logging.FileHandler',
+            'filename': "/var/log/django/ovapi.log"
+        },
+    },
+    'loggers': {
+        'fulfillment': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+        'ov_api': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+        'emails': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+
+    },
+}
