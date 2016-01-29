@@ -20,22 +20,7 @@ LOGGING = {
         'file': {
             'level': '<%= @log_level %>',
             'class': 'logging.FileHandler',
-            'filename': "/var/log/django/ovapi.log"
+            'filename': "/var/log/django/pictureroom.log"
         },
-    },
-    'loggers': {
-        'fulfillment': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-        },
-        'ov_api': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-        },
-        'emails': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-        },
-
-    },
+    }
 }
