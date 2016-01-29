@@ -9,19 +9,6 @@ template "/home/#{node['pictureroom']['user']}/.ssh/config" do
   owner node['pictureroom']['user']
 end
 
-# configure git globals
-execute "git config" do
-  command "git config user.name #{node['pictureroom']['git_user']}"
-  user node['pictureroom']['user']
-  cwd node['pictureroom']['app_root']
-end
-
-execute "git config" do
-  command "git config user.email #{node['pictureroom']['git_email']}"
-  user node['pictureroom']['user']
-  cwd node['pictureroom']['app_root']
-end
-
 # create directory and clone repo if it doesn't exist
 unless File.directory?(node['pictureroom']['app_root'])
   execute "git clone" do
@@ -41,22 +28,12 @@ unless File.directory?("/etc/wal-e.d/env")
 end
 
 # backups
-node.default['postgresql']['config']['wal_level'] = 'archive'
-node.default['postgresql']['config']['archive_mode'] = 1
-node.default['postgresql']['config']['archive_timeout'] = 60
-node.default['postgresql']['config']['archive_command'] = "envdir /etc/wal-e.d/env #{node['pictureroom']['app_root']}/env/bin/wal-e wal-push %p"
+# node.default['postgresql']['config']['wal_level'] = 'archive'
+# node.default['postgresql']['config']['archive_mode'] = 1
+# node.default['postgresql']['config']['archive_timeout'] = 60
+# node.default['postgresql']['config']['archive_command'] = "envdir /etc/wal-e.d/env #{node['pictureroom']['app_root']}/env/bin/wal-e wal-push %p"
 
 include_recipe "postgresql::server"
-
-wal_e_command = "/usr/bin/envdir /etc/wal-e.d/env #{node['pictureroom']['app_root']}/env/bin/wal-e"
-
-cron "database_backups" do
-  minute '0'
-  hour '1'
-  weekday '*'
-  user 'postgres'
-  command "#{wal_e_command} backup-push #{node['postgresql']['config']['data_directory']} && #{wal_e_command} delete --confirm retain 14"
-end
 
 # normal provisioning
 include_recipe "pictureroom::base"
@@ -103,15 +80,3 @@ end
 firewall 'ufw'
 
 include_recipe "pictureroom::deploy"
-
-execute "create_webhooks" do
-  command "env/bin/python src/manage.py create_webhooks"
-  cwd node['pictureroom']['app_root']
-  user node['pictureroom']['user']
-end
-
-execute "create_carrier_service" do
-  command "env/bin/python src/manage.py create_carrier_service"
-  cwd node['pictureroom']['app_root']
-  user node['pictureroom']['user']
-end
