@@ -20,9 +20,11 @@ from django.contrib.auth.decorators import login_required
 from events import views as events_views
 
 urlpatterns = [
-    url(r'^get-fb-token/$', login_required(
-        events_views.FacebookTokenView.as_view()), {},
+    url(r'^get-fb-token/$', events_views.get_user_access_token, {},
         name='events_get_fb_token'),
+    url(r'^get-fb-page-token/$', events_views.get_page_access_token, {},
+        name='events_get_fb_page_token'),
+
     url(r'^api/v1/events/$', events_views.facebook_events, {}, 'events_facebook'),
     url(r'^admin/', admin.site.urls),
 ]

@@ -20,6 +20,8 @@ end
 # local_settings.py
 settings = {
   "Debug" => node['pictureroom']['local_settings']['debug'],
+  "FB_CLIENT_ID" => node['pictureroom']['local_settings']['facebook']['client_id'],
+  "FB_CLIENT_SECRET" => node['pictureroom']['local_settings']['facebook']['client_secret'],
 }
 
 template "#{node['pictureroom']['app_root']}/src/pictureroom/local_settings.py" do
