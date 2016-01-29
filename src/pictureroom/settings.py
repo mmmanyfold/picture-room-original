@@ -25,7 +25,7 @@ SECRET_KEY = 'anmy*es5dv_7*9fkfeo)2!w@+e@94z)#tas0%rj)zxf_%zsb8m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pictureroom.udbhavgupta.com']
 
 
 # Application definition
