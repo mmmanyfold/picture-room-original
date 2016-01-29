@@ -116,6 +116,57 @@ function bindZoom() {
   $.fn.prPhotos.defaults = {};
   $(".pr-photos").prPhotos();
 
+  var prEvents = function(element, options) {
+    this.$el = $(element);
+    this.options = options;
+    this.init();
+  };
+
+  prEvents.prototype = {
+    init: function() {
+      var self = this;
+      $.getJSON(this.$el.attr("data-url"), function(response) {
+        self.renderEvents(response.data);
+      });
+    },
+
+    renderEvents: function(events) {
+      var self = this, now = new Date(), template = $("#event-template").html();
+      events.forEach(function(event) {
+        var start = new Date(event.start_time);
+        if (start >= now) {
+          var data = {
+            name: event.name,
+            description: event.description.replace(/(?:\r\n|\r|\n)/g, '<br />'),
+            link: "https://www.facebook.com/events/" + event.id + "/",
+            start: dateFormat(start, "dddd mmmm dS, h:MM TT"),
+            place: event.place
+          };
+          if (event.end_time) data['end'] = dateFormat(new Date(event.end_time), "h:MM TT");
+          var $event = $(Mustache.render(template, data));
+          self.$el.append($event);
+        }
+      });
+      $(".description", this.$el).linkify();
+    }
+  };
+
+  $.fn.prEvents = function(option) {
+    var selector = this.selector;
+    return this.each(function () {
+      var $this = $(this)
+      , data = $this.data('prEvents')
+      , options = $.extend($.fn.prEvents.defaults, typeof option == 'object' && option);
+      options['selector'] = selector;
+      if (!data) $this.data('prEvents', (data = new prEvents(this, options)))
+      if (typeof(option) == 'string') {
+        data[action]();
+      }
+    });
+  };
+  $.fn.prEvents.defaults = {};
+  $(".pr-events").prEvents();
+
   $(".carousel").carousel({
     interval: false
   });

@@ -666,6 +666,15 @@ select.form-control {
   .staff-picks .staff-products.active {
     display: block; }
 
+/* Events */
+.pr-event {
+  border-bottom: 2px solid black;
+  padding-bottom: 36px; }
+  .pr-event:last-child {
+    border-bottom: none; }
+  .pr-event .join-link a {
+    display: block; }
+
 /* Cart */
 .webstore-overlay,
 .webstore-overlay h1,
@@ -1086,6 +1095,9 @@ body.overlay, .editcartmodal.webstore-modal.show {
   /* Pages */
   #custom_content .hours-info {
     margin-bottom: 24px; }
+
+  .pr-event .join-link, .pr-event .address {
+    margin-top: 24px; }
 
   .artist-bio {
     margin-bottom: 12px; }

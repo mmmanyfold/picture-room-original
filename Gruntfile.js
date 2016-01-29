@@ -24,7 +24,8 @@ module.exports = function(grunt) {
         files: {
           "theme/js/scripts.min.js": [
             "theme/js/jquery.min.js", "theme/js/bootstrap.js",
-            "theme/js/mustache.js",
+            "theme/js/mustache.js", "theme/js/date.format.js",
+            "theme/js/linkify.min.js", "theme/js/linkify-jquery.min.js",
             "theme/js/scripts.js"]
         }
       }

@@ -670,6 +670,20 @@ select.form-control {
   }
 }
 
+/* Events */
+
+.pr-event {
+  border-bottom: $border-default;
+  padding-bottom: $gutter*3;
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .join-link a {
+    display: block;
+  }
+}
+
 /* Cart */
 
 .webstore-overlay,
@@ -1198,6 +1212,10 @@ body.overlay, .editcartmodal.webstore-modal.show {
     .hours-info {
       margin-bottom: $gutter*2;
     }
+  }
+
+  .pr-event {
+    .join-link, .address { margin-top: $gutter*2; }
   }
 
   .artist-bio {
