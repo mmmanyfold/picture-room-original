@@ -50,6 +50,7 @@ end
 
 template "/etc/varnish/default.vcl" do
   source "varnish-default.erb"
+  variables({ip_address: node['ip_address']})
 end
 
 # required packages

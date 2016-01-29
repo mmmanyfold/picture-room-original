@@ -5,6 +5,7 @@ backend default {
 
 acl purge {
     "localhost";
+    <%- if @ip_address; %>"<%= @ip_address %>";<%- end %>
 }
 
 sub vcl_recv {
