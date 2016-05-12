@@ -131,10 +131,22 @@ function bindZoom() {
     },
 
     renderEvents: function(events) {
+
+      // resort
+      var r_events = events.sort(function(a, b){
+        var sorter = 0;
+        if (moment(a.start_time).unix() < moment(b.start_time).unix()) {
+          sorter = -1;
+        } else {
+          sorter = 1;
+        }
+        return sorter;
+      });
+
       var self = this, now = new Date(), template = $("#event-template").html();
-      events.forEach(function(event) {
+      r_events.forEach(function(event) {
         var start = new Date(event.start_time);
-        if (start >= now) {
+        if (start >= now && b.type=="public") {
           var data = {
             name: event.name,
             description: event.description.replace(/(?:\r\n|\r|\n)/g, '<br />'),

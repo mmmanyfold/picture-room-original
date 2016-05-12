@@ -356,7 +356,7 @@ h1 {
   padding: 12px; }
 
 .form-control {
-  color: black; }
+  color: black;}
 
 .btn {
   font-size: 20px;
@@ -602,6 +602,7 @@ select.form-control {
   color: #012f87; }
 .featured-artists .forest h2 {
   color: #43683c; }
+.featured-artists .salmon h2 { color: #ff737b; }
 
 .previous-artists {
   border-top: 2px solid black;

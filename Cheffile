@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 site 'https://supermarket.getchef.com/api/v1'
 
-cookbook 'pictureroom', :path => 'vendor/cookbooks/pictureroom'
+cookbook 'pictureroom', :path => 'vendor/cookbooks/'

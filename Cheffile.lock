@@ -68,7 +68,7 @@ SITE
       yum (~> 3.2)
 
 PATH
-  remote: vendor/cookbooks/pictureroom
+  remote: vendor/cookbooks/
   specs:
     pictureroom (0.1.8)
       apt (>= 0.0.0)
@@ -85,4 +85,3 @@ PATH
 
 DEPENDENCIES
   pictureroom (>= 0)
-

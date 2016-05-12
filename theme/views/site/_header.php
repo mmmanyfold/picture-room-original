@@ -18,7 +18,7 @@
   </div>
   <div class="col-sm-1 col-sm-push-1 hidden-xs">
 
-    ■ / <a href="http://goodsforthestudy.mcnallyjacksonstore.com/store/">○</a> / <a href="http://www.mcnallyjackson.com/" class="link-mcnally-jackson">McNally Jackson Store</a><br>
+    ■ / <a href="http://goodsforthestudy.mcnallyjacksonstore.com/store/" target="_blank">○</a> / <a href="http://www.mcnallyjackson.com/" target="_blank" class="link-mcnally-jackson">McNally Jackson Store</a><br>
     Picture Room
   </div>
   <div class="col-sm-1 col-sm-pull-4 col-cart">

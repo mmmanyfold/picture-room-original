@@ -14,8 +14,8 @@
      </div>
      <div class="col-xs-2 col-sm-1 social-col">
        <strong class="fixed-width-label">I</strong><a href="https://instagram.com/pictureroomnyc/">Instagram</a><br>
-       <strong class="fixed-width-label">F</strong><a href="https://www.facebook.com/McNally-Jackson-Books-47569381734/">Facebook</a><br>
-       <strong class="fixed-width-label">P</strong><a href="">Pinterest</a><br>
+       <strong class="fixed-width-label">F</strong><a href="https://www.facebook.com/pictureroomnyc/">Facebook</a><br>
+       <strong class="fixed-width-label">P</strong><a href="https://www.pinterest.com/pictureroom/">Pinterest</a><br>
      </div>
    </div>
 </footer>
